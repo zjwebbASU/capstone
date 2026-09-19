@@ -1,0 +1,220 @@
+@layer reset, base, layout, components, utilities, overrides;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+}
+
+@layer base {
+  :root {
+    --black: #000;
+    --white: #fff;
+    --primary: #fff8ec;
+    --secondary: #2eabff;
+    --tertiary: #05517c;
+
+    --font: Arial, Helvetica, sans-serif;
+    --font-size: 1rem;
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 2rem;
+
+    --radius-1: 0.25rem;
+    --radius-2: 0.5rem;
+    --radius-3: 1rem;
+
+    --focus-color: var(--tertiary);
+    --focus-outline: 3px solid var(--focus-color);
+
+    @media (prefers-color-scheme: dark) {
+      --primary: #1a1a1a;
+      --secondary: #62c2ff;
+      --tertiary: #8ed5ff;
+      --white: #242424;
+      --black: #fff;
+    }
+  }
+
+  body {
+    font-family: var(--font);
+    background-color: var(--primary);
+    margin: 0;
+    padding-block: var(--space-4);
+    margin-inline: var(--space-3);
+    color: var(--black);
+  
+    a{
+      color: var(--secondary);
+    }
+    
+    a:hover{
+      color: var(--tertiary);
+    }
+  
+    a:focus-visible {
+      outline: var(--focus-outline);
+      outline-offset: 2px;
+    }
+  
+  }
+
+}
+
+@layer layout {
+  main {
+    .card-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: var(--space-4);
+    }
+  }
+  @media (max-width: 512px) {
+    .nav-list {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@layer components {
+  .card{
+    container-type: inline-size;
+    max-width: 400px;
+    border: 1px solid var(--secondary);
+    border-radius: var(--radius-2);
+    padding: var(--space-3);
+    background-color: var(--white);
+  }
+
+  .flavor-card{
+    display: grid;
+    gap: var(--space-3);
+  }
+  
+  .flavor-card img{
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-2);
+  }
+
+  .flavor-card h3{
+    margin-top: 0;
+  }
+
+  .flavor-card p{
+    line-height: 1.5;
+  }
+
+  .nav-list{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .nav-list a{
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--secondary);
+    border-radius: var(--radius-1);
+    background-color: var(--white);
+  }
+
+  .nav-list a:hover, .nav-list a[aria-current="page"]{
+    background-color: var(--secondary);
+    color: var(--white);
+  }
+
+  .interest-form input, .interest-form select{
+    margin-bottom: var(--space-2);
+    padding: var(--space-2);
+    border: 1px solid var(--secondary);
+    border-radius: var(--radius-1);
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  .button{
+    background-color: var(--secondary);
+    color: var(--white);
+    border: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-2);
+    text-decoration: none;
+  }
+
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--space-4), 100%), fit-content(12rem)));
+    gap: var(--space-2);
+  }
+
+  @supports(container-type: inline-size) {
+    .card {
+      container: card / inline-size;
+    }
+  }
+}
+
+@layer utilities {
+  .visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mt-2 {
+    margin-top: var(--space-2);
+  }
+
+  .mb-4 {
+    margin-bottom: var(--space-4);
+  }
+}
+
+@layer overrides {
+  #register button{
+    background-color: var(--white);
+    color: var(--tertiary);
+    border: 2px solid var(--tertiary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-2);
+    font-size: var(--font-size);
+  }
+}
+
+@media print {
+  body {
+    background-color: var(--white);
+    color: var(--black);
+  }
+  button, .nav-list{
+    display: none;
+  }
+}
+
+@container (min-width: 600px) {
+  .flavor-card {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+}
+
