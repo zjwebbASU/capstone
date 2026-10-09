@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Zoyo Frozen Yogurt</title>
+        <title>Frozen Yogurt</title>
         <meta charset="UTF-8">
+        <meta property="og:title" content="Frozen Yogurt">
+        <meta property="og:description" content="Discover delicious frozen yogurt flavors made for every you.">
+        <meta property="og:image" content="assets/hero-img.jpg">
+        <meta property="og:url" content="https://zjwebbasu.github.io/capstone/">
+        <meta property="og:type" content="website">
+
         <link rel="stylesheet" href="styles.css">
+        <link rel="canonical" href="https://www.example.com">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +21,16 @@
         <header>
             <nav>
                 <ul class="nav-list">
-                    <li><a href="#">Flavors</a></li>
-                    <li><a href="#">Locations</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="flavors.html">Flavors</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <section class="hero" aria-labelledby="hero-heading">
-                <img src="assets/hero-img.jpg" alt="A decorative image of melting frozen yogurt on a pink background">
+                <img src="assets/hero-img.webp" alt="A decorative image of melting frozen yogurt on a pink background">
                 <!-- Art direction is not needed because the hero image is appropriate for all screen sizes -->
                 <div class="hero-content">
                     <p>Fresh. Creamy. Delicious.</p>
@@ -32,69 +40,70 @@
                     </p>
                     <a href="flavors.html" class="button">Explore Flavors</a>
                 </div>
-                
-                
             </section>
-            
             <section class="featured-flavors" aria-labelledby="featured-heading">
                 <h2 id="featured-heading">Featured Flavors</h2>
-                
                 <div class="card-grid">
-                    
                     <article class="card flavor-card">
                         <img
-                        src="assets/strawberry.jpg"
+                        src="assets/strawberry.webp"
                         alt="Strawberry frozen yogurt"
                         >
                         <h3>Strawberry</h3>
                         <p>
                             Sweet, creamy, and packed with fresh strawberry flavor.
                         </p>
-                        <a href="flavors.html#strawberry" class="button">
+                        <a href="#" class="button">
                             View Flavor
                         </a>
                     </article>
-                    
                     <article class="card flavor-card">
                         <img
-                        src="assets/vanilla.jpg"
+                        src="assets/vanilla.webp"
                         alt="Vanilla frozen yogurt"
                         >
                         <h3>Vanilla</h3>
                         <p>
                             A smooth and classic flavor that's perfect with any topping.
                         </p>
-                        <a href="flavors.html#vanilla" class="button">
+                        <a href="#" class="button">
                             View Flavor
                         </a>
                     </article>
-                    
                     <article class="card flavor-card">
                         <img
-                        src="assets/chocolate.jpg"
+                        src="assets/chocolate.webp"
                         alt="Chocolate frozen yogurt"
                         >
                         <h3>Chocolate</h3>
                         <p>
                             Rich, chocolatey frozen yogurt for the ultimate sweet tooth.
                         </p>
-                        <a href="flavors.html#chocolate" class="button">
+                        <a href="#" class="button">
                             View Flavor
                         </a>
                     </article>
-                    
+                    <article class="card flavor-card">
+                        <img
+                        src="assets/cookie-dough.webp"
+                        alt="Cookie Dough frozen yogurt"
+                        >
+                        <h3>Cookie Dough</h3>
+                        <p>
+                            A delicious blend of cookie dough and creamy frozen yogurt.
+                        </p>
+                        <a href="#" class="button">
+                            View Flavor
+                        </a>
                 </div>
             </section>
-            
             <section class="about" aria-labelledby="about-heading">
                 <h2 id="about-heading">About Our Froyo</h2>
-                
                 <p>
                     We believe frozen yogurt should be fun, fresh, and made for everyone.
                     From classic favorites to exciting new flavors, there's always
                     something delicious waiting for you.
                 </p>
-            
                 <a href="about.html" class="button">Learn More About Us</a>
             </section>
         </main>

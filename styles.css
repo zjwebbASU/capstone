@@ -48,9 +48,17 @@
     padding-block: var(--space-4);
     margin-inline: var(--space-3);
     color: var(--black);
+
+    header{
+      margin-bottom: var(--space-4);
+      background-color: var(--tertiary);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-2);
+    }
   
     a{
       color: var(--secondary);
+      font-weight: bold;
     }
     
     a:hover{
@@ -70,11 +78,12 @@
   header a {
     text-decoration: none;
   }
+  
   main {
     .card-grid{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-      gap: var(--space-4);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: var(--space-3);
     }
   }
 
@@ -82,7 +91,9 @@
     position: relative;
     min-height: 600px;
     overflow: hidden;
-    color: #05517c;
+    color: #043450;
+    display: flex;
+    align-items: center;
   }
 
   .hero img{
@@ -98,6 +109,22 @@
     position: relative;
     padding: var(--space-4);
     max-width: 600px;
+  }
+
+
+  .location-card h2{
+    margin-top: 0;
+  }
+
+  @media(max-width: 768px){
+    .hero{
+      min-height: 400px;
+    }
+
+    .hero-content{
+      padding: var(--space-3);
+      max-width: 500px;
+    }
   }
 
   @media (max-width: 512px) {
@@ -144,6 +171,7 @@
     list-style: none;
     padding: 0;
     display: flex;
+    justify-content: end;
     gap: var(--space-2);
   }
 
@@ -153,7 +181,7 @@
     border: 1px solid var(--secondary);
     border-radius: var(--radius-1);
     background-color: var(--white);
-    width: 100px;
+    width: 120px;
     text-align: center;
   }
 
@@ -183,9 +211,12 @@
   .nav-list {
     list-style: none;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--space-4), 100%), fit-content(12rem)));
     gap: var(--space-2);
+  }
+
+  .locations h3 {
+    color: var(--secondary);
+    font-size: 1.75rem;
   }
 
   @supports(container-type: inline-size) {

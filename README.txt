@@ -1,0 +1,1 @@
+This website displays the flavors, locations, and story of a frozen yogurt shop. The GitHub URL is https://zjwebbasu.github.io/capstone/
