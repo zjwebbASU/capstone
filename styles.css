@@ -233,7 +233,7 @@
     gap: var(--space-2);
   }
 
-  .locations h3 {
+  .locations h2 {
     color: var(--secondary);
     font-size: 1.75rem;
   }
